@@ -16,6 +16,60 @@ Crop-Test is a cross-platform mobile application designed to empower farmers wit
 
 ---
 
+## Supported Crops & Diseases
+
+Our AI model has been trained to detect **22 specific conditions** across 4 major African crops, differentiating between healthy and diseased states with high precision.
+
+| **Cashew** | **Cassava** |
+| :--- | :--- |
+| ✅ Anthracnose | ✅ Bacterial Blight |
+| ✅ Gumosis | ✅ Brown Spot |
+| ✅ Leaf Miner | ✅ Green Mite |
+| ✅ Red Rust | ✅ Mosaic Disease |
+| 🌿 Healthy | 🌿 Healthy |
+
+| **Maize** | **Tomato** |
+| :--- | :--- |
+| ✅ Fall Armyworm | ✅ Leaf Blight |
+| ✅ Grasshopper | ✅ Leaf Curl |
+| ✅ Leaf Beetle | ✅ Septoria Leaf Spot |
+| ✅ Leaf Blight | ✅ Verticillium Wilt |
+| ✅ Leaf Spot | 🌿 Healthy |
+| ✅ Streak Virus | |
+| 🌿 Healthy | |
+
+### Technical Class Mapping (Model Output)
+
+The YOLO11 model outputs a class ID (0-21). The system maps these IDs to the following disease names for the frontend and GenAI processing:
+
+```json
+{
+  "0": "Cashew anthracnose",
+  "1": "Cashew gumosis",
+  "2": "Cashew healthy",
+  "3": "Cashew leaf miner",
+  "4": "Cashew red rust",
+  "5": "Cassava bacterial blight",
+  "6": "Cassava brown spot",
+  "7": "Cassava green mite",
+  "8": "Cassava healthy",
+  "9": "Cassava mosaic",
+  "10": "Maize fall armyworm",
+  "11": "Maize grasshoper",
+  "12": "Maize healthy",
+  "13": "Maize leaf beetle",
+  "14": "Maize leaf blight",
+  "15": "Maize leaf spot",
+  "16": "Maize streak virus",
+  "17": "Tomato healthy",
+  "18": "Tomato leaf blight",
+  "19": "Tomato leaf curl",
+  "20": "Tomato septoria leaf spot",
+  "21": "Tomato verticulium wilt"
+}
+```
+---
+
 ## Technical Architecture: The AI Model
 
 At the core of Crop-Test is a custom fine-tuned image classification model built upon the **Ultralytics YOLO11** architecture.
