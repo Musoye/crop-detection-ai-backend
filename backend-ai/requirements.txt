@@ -5,3 +5,4 @@ requests==2.32.3
 ultralytics==8.4.9
 ultralytics-thop==2.0.18
 gunicorn
+python-dotenv
